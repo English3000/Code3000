@@ -1,5 +1,4 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './App.css';
 
 // const View = () => <div style={{display: 'flex', justifyContent: 'center'}}>
@@ -32,19 +31,21 @@ export default class App extends React.Component {
         <section onClick={() => this.reveal('#next', '[id^="box"]')}>
           <p className='flex-middle' id='item-1' style={{marginBottom: 12}}
              onClick={() => this.reveal('#item-2', '#box-1', 'flex-middle')}>
-            <input type='checkbox' id='box-1' style={{marginRight: 6}}/>
+            <input type='checkbox' id='box-1' style={{marginRight: 9}}/>
             <a href='https://atom.io/' target='_onBlank'
                style={{textDecoration: 'none', color: 'white'}}
                onClick={() => document.getElementById('box-1').click()}>
                Download any text editor</a>
+            <i className="fas fa-hand-pointer" style={{marginLeft: 9}}></i>
           </p>
 
           <p className='flex-middle invisible' id='item-2' style={{marginBottom: 12}}>
-            <input type='checkbox' id='box-2' style={{marginRight: 6}}/>
+            <input type='checkbox' id='box-2' style={{marginRight: 9}}/>
             <a href='' target='_onBlank'
                style={{textDecoration: 'none', color: 'white'}}
                onClick={() => document.getElementById('box-2').click()}>
                2nd instruction</a>
+            <i className="fas fa-hand-pointer" style={{marginLeft: 9}}></i>
           </p>
         </section>
 
@@ -56,9 +57,7 @@ export default class App extends React.Component {
   }
 
   reveal(element, trigger, classes = '') {
-    console.log(trigger);
     const checkboxes = Array.from(document.querySelectorAll(trigger));
-    console.log(checkboxes);
 
     if (checkboxes.every(el => el.checked)) {
       document.querySelectorAll(element)
@@ -69,4 +68,3 @@ export default class App extends React.Component {
     }
   }
 }
-/* <img src={logo} className="App-logo" alt="logo" /> */
